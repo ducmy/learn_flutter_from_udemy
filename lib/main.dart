@@ -15,6 +15,8 @@ class MyApp extends StatelessWidget {
   }
 }
 
+// Sử dụng data thi dung StatefulWidget
+// StatefulWidget con duoc dung de rebuild subWidget
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key? key}) : super(key: key);
 
@@ -29,7 +31,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text('Tui la Widget Text. Data cua tui la: $counter '),
+        child: MyText(counter: counter),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
@@ -40,5 +42,20 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Icon(Icons.add),
       ),
     );
+  }
+}
+
+// Hiển thị data thì dùng StatelessWidget
+class MyText extends StatelessWidget {
+  const MyText({
+    Key? key,
+    required this.counter,
+  }) : super(key: key);
+
+  final int counter;
+
+  @override
+  Widget build(BuildContext context) {
+    return Text('Tui la Widget Text. Data cua tui la: $counter ');
   }
 }
