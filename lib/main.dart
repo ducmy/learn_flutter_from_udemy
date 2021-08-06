@@ -1,73 +1,44 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    MaterialApp(
-      home: SafeArea(
-        child: Scaffold(
-          appBar: AppBar(
-            backgroundColor: Colors.pink,
-            title: Text('Cua nang Flutter'),
-          ),
-          body: buildColumn(),
-        ),
-      ),
-    ),
-  );
+  runApp(MyApp());
 }
 
-buildColumn() {
-  return ColumnWidget(); // refector from here
-}
-
-class ColumnWidget extends StatelessWidget {
-  const ColumnWidget({
-    Key? key,
-  }) : super(key: key);
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text('Bay gio thi hot dc roi nha! Hot reload duoc roi day'),
-        Row(
-          children: [
-            TextButton(
-              child: Text('Red Btn'),
-              style: TextButton.styleFrom(
-                primary: Colors.white,
-                onSurface: Colors.red,
-                backgroundColor: Colors.red,
-              ),
-              onPressed: () {
-                print('Pressed');
-              },
-            ), //Button Red
-            TextButton(
-              child: Text('Yellow btn'),
-              style: TextButton.styleFrom(
-                primary: Colors.black,
-                onSurface: Colors.yellow,
-                backgroundColor: Colors.yellow,
-              ),
-              onPressed: () {
-                print('Pressed');
-              },
-            ),
-            TextButton(
-              child: Text('Green btn'),
-              style: TextButton.styleFrom(
-                primary: Colors.black,
-                onSurface: Colors.red,
-                backgroundColor: Colors.green,
-              ),
-              onPressed: () {
-                print('Pressed');
-              },
-            ) // Button Green
-          ],
-        )
-      ],
+    return MaterialApp(
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  MyHomePage({Key? key}) : super(key: key);
+
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  int counter = 0; // Data cua Widget
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Text('Tui la Widget Text. Data cua tui la: $counter '),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            counter++;
+          });
+        },
+        child: Icon(Icons.add),
+      ),
     );
   }
 }
