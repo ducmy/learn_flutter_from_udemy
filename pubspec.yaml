@@ -22,3 +22,5 @@ flutter:
   uses-material-design: true
   assets:
     - images/hot_girl.jpeg
+    - images/kimcuong.jpg
+    - images/supper_main.png

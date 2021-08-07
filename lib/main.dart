@@ -13,8 +13,7 @@ void main() {
         ),
         body: Center(
           child: Image(
-            image: NetworkImage(
-                'https://www.publicdomainpictures.net/pictures/320000/velka/background-image.png'),
+            image: AssetImage('images/supper_main.png'),
           ),
         ),
       ),
