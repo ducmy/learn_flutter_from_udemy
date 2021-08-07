@@ -1,3 +1,12 @@
+### 
+    $git tag <new_tag>
+
+    $git tag
+
+    $git tag -a <tag_name> -m "Message"
+
+    $git tag -n
+
 ## Download transparent image free
 http://www.stickpng.com/
 
@@ -10,6 +19,6 @@ không cần phải khai báo đường dẫn hình ảnh hết
 
 
 ## Change App icon?
-
+create icon here: https://appicon.co/
 
 ##
