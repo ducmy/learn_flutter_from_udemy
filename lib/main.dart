@@ -1,29 +1,23 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            final snackBar = SnackBar(content: Text('This is snack Bar ^^'));
-            Scaffold.of(context).showSnackBar(snackBar);
-          },
-          child: const Text('Show SnackBar'),
+// What i learned
+// Press ctrl + . to show introduce layout
+void main() {
+  runApp(
+    MaterialApp(
+      home: Scaffold(
+        backgroundColor: Colors.blueGrey,
+        appBar: AppBar(
+          title: Text('I am Rich'),
+          backgroundColor: Colors.blueGrey[900],
+        ),
+        body: Center(
+          child: Image(
+            image: NetworkImage(
+                'https://www.publicdomainpictures.net/pictures/320000/velka/background-image.png'),
+          ),
         ),
       ),
-    );
-  }
+    ),
+  );
 }
